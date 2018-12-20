@@ -10,8 +10,8 @@ class FullPost extends Component {
     // fetch data
     componentDidUpdate() {
         if (this.props.id) {
-            // to prevent continuous data fetching, only fetch data when switching to another post
-            if ( !this.state.loadePost 
+            // to prevent continuous data fetching, only fetch data when receiving new post
+            if ( !this.state.loadedPost 
                 || (this.state.loadedPost && this.props.id !== this.state.loadedPost.id) ) {
                 axios.get('https://jsonplaceholder.typicode.com/posts/' + this.props.id)
                 .then( res => {
