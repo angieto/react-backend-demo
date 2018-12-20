@@ -4,7 +4,7 @@ import axios from 'axios';
 import Post from '../../components/Post/Post';
 import FullPost from '../../components/FullPost/FullPost';
 import NewPost from '../../components/NewPost/NewPost';
-import './Blog.css';
+import classes from './Blog.module.css';
 
 class Blog extends Component {
     state = {
@@ -41,17 +41,29 @@ class Blog extends Component {
         });
 
         return (
-            <div>
-                <section className="Posts">
-                    { posts }
-                </section>
-                <section>
-                    <FullPost id={ this.state.selectedPostId }/>
-                </section>
-                <section>
-                    <NewPost />
-                </section>
-            </div>
+            <>
+                <div className={classes.Blog}>
+                    <header>
+                        <nav>
+                            <u>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/new-post">New Post</a></li>
+                            </u>
+                        </nav>
+                    </header>
+                </div>
+                <div>
+                    <section className={classes.Blog}>
+                        { posts }
+                    </section>
+                    <section>
+                        <FullPost id={ this.state.selectedPostId }/>
+                    </section>
+                    <section>
+                        <NewPost />
+                    </section>
+                </div>
+            </>
         );
     }
 }
