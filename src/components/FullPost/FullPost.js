@@ -25,6 +25,9 @@ class FullPost extends Component {
         axios.delete('https://jsonplaceholder.typicode.com/posts/' + this.props.id)
              .then( res => {
                  console.log(res);
+             })
+             .catch( err => {
+                 console.log(err);
              });
     }
 
