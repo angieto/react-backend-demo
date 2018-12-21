@@ -8,12 +8,12 @@ class FullPost extends Component {
     }
 
     // fetch data
-    componentDidUpdate() {
-        if (this.props.id) {
+    componentDidMount() {
+        if (this.props.match.params.id) {
             // to prevent continuous data fetching, only fetch data when receiving new post
             if ( !this.state.loadedPost 
                 || (this.state.loadedPost && this.props.id !== this.state.loadedPost.id) ) {
-                axios.get('https://jsonplaceholder.typicode.com/posts/' + this.props.id)
+                axios.get('https://jsonplaceholder.typicode.com/posts/' + this.props.match.params.id)
                 .then( res => {
                     this.setState({ loadedPost: res.data })
                 });

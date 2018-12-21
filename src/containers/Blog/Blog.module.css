@@ -13,10 +13,11 @@
 
 .Blog a {
     text-decoration: none;
-    color: royalblue;
+    color: rgb(47, 70, 141);
 }
 
 .Blog a:hover,
-.Blog a:active {
-    color: midnightblue;
+.Blog a:active,
+.Blog a.active {
+    color: rgb(240, 135, 49);
 }

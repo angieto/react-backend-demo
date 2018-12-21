@@ -1,4 +1,5 @@
 import React from 'react';
+// import { withRouter } from 'react-router-dom';
 
 import classes from './Post.module.css';
 
@@ -11,4 +12,6 @@ const post = (props) => (
     </article>
 );
 
+// example of accessing props with a higher component
+// export default withRouter(post);
 export default post;
