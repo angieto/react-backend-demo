@@ -11,6 +11,7 @@ class FullPost extends Component {
     loadData() {
         if (this.props.match.params.id) {
             // to prevent continuous data fetching, only fetch data when receiving new post
+            // add "+" in front of this.props.match.params.id to convert it into a number
             if ( !this.state.loadedPost 
                 || (this.state.loadedPost && this.state.loadedPost.id !== +this.props.match.params.id) ) {
                 axios.get('https://jsonplaceholder.typicode.com/posts/' + this.props.match.params.id)
